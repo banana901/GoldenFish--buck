@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RunAway : FishBase
 {
-   
+
     public float detectionRange = 2.0f;
 
     public float escapeSpeed = 2.0f;
@@ -13,11 +13,12 @@ public class RunAway : FishBase
 
 
 
+
     // Start is called before the first frame update
 
 
     // Update is called once per frame
-    
+
 
 
 

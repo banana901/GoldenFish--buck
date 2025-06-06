@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScaleEffect : MonoBehaviour
 {
     public Vector3 targetScale = new Vector3(10f, 10f, 10f); // 目指す大きさ
-    public float duration = 3f; // 拡大にかける時間（秒）
+    public float duration = 1f; // 拡大にかける時間（秒）
     // Start is called before the first frame update
     void Start()
     {

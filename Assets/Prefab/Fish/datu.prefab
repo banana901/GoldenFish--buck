@@ -144,3 +144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  countDown: 5
+  score: 100
+  defeatEffect: {fileID: 1644110854546719525, guid: 7455cf6281fafd94d830853f6c99b891, type: 3}
+  moveSprites:
+  - {fileID: 21300000, guid: e4161e1619a746043884214cc6444d35, type: 3}
+  MoveAniTime: 0.1
+  MoveAniTimer: 0
+  spriteRenderer: {fileID: 5150515702974642967}

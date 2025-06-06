@@ -8,7 +8,7 @@ public class Poi : MonoBehaviour
     [SerializeField] float poiSpeed;
 
     public GameObject defeatFish;
-    
+
     public GameObject defeDatu;
 
     public int destoroyCount = 0;
@@ -24,7 +24,7 @@ public class Poi : MonoBehaviour
 
     [SerializeField] float breakTime = 3f;
 
-  
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,7 @@ public class Poi : MonoBehaviour
                 anim.SetBool("Break", false);
                 breakTime = 1f; // タイマーを戻す
             }
-            
+
 
         }
         Move();
@@ -63,33 +63,11 @@ public class Poi : MonoBehaviour
 
             if (isInTrigger && targetFish != null)
             {
-                if (targetFish.CompareTag("Fish"))
+                IFish fish = targetFish.GetComponent<IFish>();
+                if (fish != null)
                 {
-                    Destroy(targetFish.gameObject);
-                    Instantiate(defeatFish, transform.position, Quaternion.identity);
-                    scoreManager.score_num += 100;
-                }
-                else if (targetFish.CompareTag("Datu"))
-                {
-                    Destroy(targetFish.gameObject);
-                    Instantiate(defeDatu, transform.position, Quaternion.identity);
-                    scoreManager.score_num += 1000;
-                }
-                else if (targetFish.CompareTag("GoldenGod"))
-                {
-                    Destroy(targetFish.gameObject);
-                    Instantiate(defeDatu, transform.position, Quaternion.identity);
-                    scoreManager.score_num += 5000;
-                }
-                else if (targetFish.CompareTag("Namazu"))
-                {
-                     ScaleEffect se = targetFish.GetComponent<ScaleEffect>();
-
-                    se.enabled = true;
-                   
-                   
-                    
-                    scoreManager.score_num += 800;
+                    fish.OnDefeated();
+                    scoreManager.AddScore(fish.GetScore());
                 }
             }
             else
@@ -103,7 +81,7 @@ public class Poi : MonoBehaviour
 
 
         }
-        
+
 
 
 
@@ -124,10 +102,10 @@ public class Poi : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-       
-            isInTrigger = true;
-            targetFish = other;
-        
+
+        isInTrigger = true;
+        targetFish = other;
+
 
     }
 

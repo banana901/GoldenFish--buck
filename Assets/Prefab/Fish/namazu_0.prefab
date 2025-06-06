@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 531832632605354070}
   - component: {fileID: 3835770018002363149}
   - component: {fileID: 4604316379285515112}
-  - component: {fileID: 3651375257168319687}
+  - component: {fileID: 4384563286295746612}
   m_Layer: 0
   m_Name: namazu_0
   m_TagString: Namazu
@@ -97,7 +97,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6268218673608696763}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cb2148d787af14649bc1abd333ec0dd8, type: 2}
   m_CullingMode: 0
@@ -123,7 +123,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  detectionRange: 2
+  countDown: 5
+  score: 500
+  defeatEffect: {fileID: 0}
+  moveSprites:
+  - {fileID: 244384778, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  - {fileID: 1634170048, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  - {fileID: -1437453990, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  - {fileID: 891670268, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  - {fileID: 1059238698, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  - {fileID: 891670268, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  - {fileID: -1437453990, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  - {fileID: 1634170048, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  - {fileID: 244384778, guid: a3dee0e3ef6503c4dbda7a40c1e6267c, type: 3}
+  MoveAniTime: 0.1
+  MoveAniTimer: 0
+  spriteRenderer: {fileID: 2185263203035320900}
+  detectionRange: 1
   escapeSpeed: 2
 --- !u!50 &3835770018002363149
 Rigidbody2D:
@@ -197,7 +213,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40741304, y: 0.46907008}
   m_EdgeRadius: 0
---- !u!114 &3651375257168319687
+--- !u!114 &4384563286295746612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

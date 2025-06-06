@@ -58,10 +58,20 @@ public class FishManager : MonoBehaviour
         }
         else if (rnd < 11)
         {
-              AddFish(fishPrefabs[3], pos);
-            
+            AddFish(fishPrefabs[3], pos);
+
         }
-       
+        else if (rnd < 16)
+        {
+            AddFish(fishPrefabs[4], pos);
+
+        }
+        else if (rnd < 31)
+        {
+            AddFish(fishPrefabs[5], pos);
+
+        }
+
 
         //int randomIndex = Random.Range(0, fishPrefabs.Count);
         //GameObject newFish = Instantiate(fishPrefabs[randomIndex], spawnPos, Quaternion.identity);

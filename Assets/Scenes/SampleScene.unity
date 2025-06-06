@@ -5951,6 +5951,8 @@ MonoBehaviour:
   - {fileID: 3608903269200554700, guid: fead0564ae469074c9aa2ef0176f5d97, type: 3}
   - {fileID: 3008850952039362141, guid: 6d781d26f6d62334ea89b4c0962ccb74, type: 3}
   - {fileID: 6268218673608696763, guid: b9cdad342fab4cc41be13045b9d5fe2f, type: 3}
+  - {fileID: 7719963353015586627, guid: 556683c6ae451db4e8f3191d89d95dda, type: 3}
+  - {fileID: 6563493532489853299, guid: c5c48df55ea43af4db40ed3d47095846, type: 3}
   currentFishList: []
 --- !u!4 &1627075027
 Transform:

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 326349984483097233}
   - component: {fileID: 5207123246797220576}
   - component: {fileID: 2076943214130740448}
+  - component: {fileID: -9142969854852878899}
   m_Layer: 0
   m_Name: goldengod_0
   m_TagString: GoldenGod
@@ -96,7 +97,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3008850952039362141}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0c7fcde89e6208144842be6954c92488, type: 2}
   m_CullingMode: 0
@@ -122,6 +123,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  countDown: 5
+  score: 100
+  defeatEffect: {fileID: 0}
+  moveSprites:
+  - {fileID: -1598115425, guid: 2fae4576c5c92a54dba21c51828e4ab0, type: 3}
+  - {fileID: 1589270623, guid: 2fae4576c5c92a54dba21c51828e4ab0, type: 3}
+  - {fileID: -1598115425, guid: 2fae4576c5c92a54dba21c51828e4ab0, type: 3}
+  - {fileID: -339892417, guid: 2fae4576c5c92a54dba21c51828e4ab0, type: 3}
+  MoveAniTime: 0.1
+  MoveAniTimer: 0
+  spriteRenderer: {fileID: 6184957358228404499}
   detectionRange: 2
   escapeSpeed: 2
 --- !u!50 &5207123246797220576
@@ -196,3 +208,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.69760466, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-9142969854852878899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3008850952039362141}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0606d173554d542b1e9a22e7df124d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 10, y: 10, z: 10}
+  duration: 1

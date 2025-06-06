@@ -23,6 +23,8 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
 
+
+
         // オブジェクトからTextコンポーネントを取得
         Text score_text = score_object.GetComponent<Text>();
         Text scoreMax_text = scoreMax_object.GetComponent<Text>();
@@ -40,5 +42,10 @@ public class ScoreManager : MonoBehaviour
 
 
 
+    }
+
+    public void AddScore(int amount)
+    {
+        score_num += amount;
     }
 }
