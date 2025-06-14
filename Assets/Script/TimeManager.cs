@@ -9,6 +9,7 @@ public class TimeManager : MonoBehaviour
     //カウントダウン
     public float countDown = 5.0f;
     public GameObject time_Object; // Textオブジェクト
+    public GameObject getTimeObject;
 
 
 
@@ -28,7 +29,17 @@ public class TimeManager : MonoBehaviour
         Text timelimit_Text = time_Object.GetComponent<Text>();
         countDown = Mathf.Clamp(countDown, 0, 60);
         // テキストの表示を入れ替える
-        timelimit_Text.text = "制限時間" + countDown.ToString("f0");
+        timelimit_Text.text = countDown.ToString("f1");
 
+    }
+
+    public void AddTime(float timeAmount)
+    {
+        countDown += timeAmount;
+        // オブジェクトからTextコンポーネントを取得
+        Text getTime_Text = getTimeObject.GetComponent<Text>();
+
+        // テキストの表示を入れ替える
+        getTime_Text.text = "+" + timeAmount.ToString("f1") + "<size=32>sec</size>";
     }
 }

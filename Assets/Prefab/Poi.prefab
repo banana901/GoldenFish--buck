@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4115459411937714427}
   - component: {fileID: 7171970280211303659}
   - component: {fileID: 8949386335010669490}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Poi
   m_TagString: Poi
   m_Icon: {fileID: 0}
@@ -105,7 +105,10 @@ MonoBehaviour:
   defeDatu: {fileID: 1644110854546719525, guid: 7455cf6281fafd94d830853f6c99b891, type: 3}
   destoroyCount: 0
   scoreManager: {fileID: 0}
+  timeManager: {fileID: 0}
   breakTime: 1
+  timeTextPrefab: {fileID: 0}
+  worldCanvas: {fileID: 0}
 --- !u!50 &4115459411937714427
 Rigidbody2D:
   serializedVersion: 4

@@ -13,6 +13,8 @@ public abstract class FishBase : MonoBehaviour, IFish
     public float countDown = 5.0f;
 
     public int score = 100;
+    [Header("増加時間")]
+    public float time = 1f;
     public GameObject defeatEffect;
 
     public Sprite[] moveSprites;//歩く用のスプライトを入れる
@@ -21,7 +23,7 @@ public abstract class FishBase : MonoBehaviour, IFish
     public float MoveAniTimer = 0f;
     int MoveAniSpriteNum = 0;
     public SpriteRenderer spriteRenderer;
-
+    
 
 
 
@@ -38,6 +40,11 @@ public abstract class FishBase : MonoBehaviour, IFish
     public virtual int GetScore()
     {
         return score;
+    }
+
+    public virtual float GetTime()
+    {
+        return time;
     }
 
     public virtual void Move()//移動アニメーションを管理

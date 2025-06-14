@@ -100,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36451420eb7e6954a81e2e86ea5f21e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
   countDown: 5
   score: 100
+  time: 1.2
   defeatEffect: {fileID: 0}
   moveSprites:
   - {fileID: -585481142, guid: 7f985b870ef4a4c419e606925a585534, type: 3}
@@ -110,6 +111,7 @@ MonoBehaviour:
   MoveAniTime: 0.1
   MoveAniTimer: 0
   spriteRenderer: {fileID: 8778135292537010162}
+  timeManager: {fileID: 0}
 --- !u!114 &3280887601293241543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +186,7 @@ MonoBehaviour:
   speed: 8
   countDown: 5
   score: 100
+  time: 0.1
   defeatEffect: {fileID: 0}
   moveSprites:
   - {fileID: -585481142, guid: 7f985b870ef4a4c419e606925a585534, type: 3}
@@ -191,3 +194,4 @@ MonoBehaviour:
   MoveAniTime: 0.1
   MoveAniTimer: 0
   spriteRenderer: {fileID: 8778135292537010162}
+  timeManager: {fileID: 0}

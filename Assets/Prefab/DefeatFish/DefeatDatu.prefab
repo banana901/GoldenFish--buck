@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1624269333695053701}
   - component: {fileID: 2243426608398744953}
   - component: {fileID: 3742351175571502432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DefeatDatu
   m_TagString: Untagged
   m_Icon: {fileID: 0}

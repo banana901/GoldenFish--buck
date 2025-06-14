@@ -21,6 +21,7 @@ public class ScaleEffect : MonoBehaviour
 
     IEnumerator ScaleUpCoroutine()
     {
+        gameObject.layer = LayerMask.NameToLayer("Escape");
         Vector3 initialScale = Vector3.zero;
         float elapsed = 0f;
 

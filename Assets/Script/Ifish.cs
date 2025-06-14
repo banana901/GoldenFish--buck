@@ -6,6 +6,7 @@ using UnityEngine;
 public interface IFish
 {
     int GetScore(); // スコアを返す
+    float GetTime(); // スコアを返す
     void OnDefeated(); // 倒されたときの挙動
 
 }

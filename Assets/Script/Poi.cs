@@ -14,6 +14,7 @@ public class Poi : MonoBehaviour
     public int destoroyCount = 0;
 
     public ScoreManager scoreManager; // ←スコアマネージャーをここに入れる
+    public TimeManager timeManager;
 
     private bool isInTrigger = false;
     private Collider2D targetFish = null;
@@ -23,6 +24,15 @@ public class Poi : MonoBehaviour
     bool isbroken = false;
 
     [SerializeField] float breakTime = 3f;
+
+
+
+    public GameObject timeTextPrefab;     // ← Inspector でプレハブをセット
+    public Transform worldCanvas;         // ← World Space Canvas を指定
+
+    public List<Collider2D> fishInRange = new List<Collider2D>();
+
+
 
 
 
@@ -66,8 +76,18 @@ public class Poi : MonoBehaviour
                 IFish fish = targetFish.GetComponent<IFish>();
                 if (fish != null)
                 {
+                    timeManager.AddTime(fish.GetTime());
+                    // 時間表示テキストを生成
+                    GameObject textObj = Instantiate(timeTextPrefab, worldCanvas);
+                    // 魚の少し上に表示（例：Y軸1.5上）
+                    textObj.transform.position = targetFish.transform.position + new Vector3(0, 0.5f, 0);
                     fish.OnDefeated();
                     scoreManager.AddScore(fish.GetScore());
+
+
+
+
+
                 }
             }
             else
@@ -102,18 +122,48 @@ public class Poi : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
+        if (other.GetComponent<IFish>() != null)
+        {
+            if (!fishInRange.Contains(other))
+                fishInRange.Add(other);
 
-        isInTrigger = true;
-        targetFish = other;
-
-
+            targetFish = GetClosestFish(); // 最も近い魚を選ぶ
+            isInTrigger = true;
+        }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D other)
     {
-        isInTrigger = false;
-        targetFish = null;
+        if (fishInRange.Contains(other))
+            fishInRange.Remove(other);
 
+        if (fishInRange.Count == 0)
+        {
+            isInTrigger = false;
+            targetFish = null;
+        }
+        else
+        {
+            targetFish = GetClosestFish();
+        }
+    }
+
+    Collider2D GetClosestFish()
+    {
+        Collider2D closest = null;
+        float minDist = float.MaxValue;
+
+        foreach (var fish in fishInRange)
+        {
+            float dist = Vector2.Distance(transform.position, fish.transform.position);
+            if (dist < minDist)
+            {
+                minDist = dist;
+                closest = fish;
+            }
+        }
+
+        return closest;
     }
 
 }
