@@ -49,17 +49,20 @@ public abstract class FishBase : MonoBehaviour, IFish
 
     public virtual void Move()//移動アニメーションを管理
     {
-        if (MoveAniTimer >= MoveAniTime)
+        if (spriteRenderer != null)
         {
-            MoveAniSpriteNum = (MoveAniSpriteNum + 1) % moveSprites.Length;
-            spriteRenderer.sprite = moveSprites[MoveAniSpriteNum];
-            MoveAniTimer = 0;
-            spriteRenderer.color = Color.white;
-            ;
-        }
-        else
-        {
-            MoveAniTimer += Time.deltaTime;
+            if (MoveAniTimer >= MoveAniTime)
+            {
+                MoveAniSpriteNum = (MoveAniSpriteNum + 1) % moveSprites.Length;
+                spriteRenderer.sprite = moveSprites[MoveAniSpriteNum];
+                MoveAniTimer = 0;
+                spriteRenderer.color = Color.white;
+                ;
+            }
+            else
+            {
+                MoveAniTimer += Time.deltaTime;
+            }
         }
 
 
@@ -84,7 +87,7 @@ public abstract class FishBase : MonoBehaviour, IFish
 
     }
 
-    protected virtual void Update()
+    public virtual void Update()
     {
         countDown -= Time.deltaTime;
 

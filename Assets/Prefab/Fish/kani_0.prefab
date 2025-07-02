@@ -111,7 +111,6 @@ MonoBehaviour:
   MoveAniTime: 0.1
   MoveAniTimer: 0
   spriteRenderer: {fileID: 8778135292537010162}
-  timeManager: {fileID: 0}
 --- !u!114 &3280887601293241543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,4 +193,3 @@ MonoBehaviour:
   MoveAniTime: 0.1
   MoveAniTimer: 0
   spriteRenderer: {fileID: 8778135292537010162}
-  timeManager: {fileID: 0}

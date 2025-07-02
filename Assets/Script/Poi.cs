@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Poi : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class Poi : MonoBehaviour
     bool isbroken = false;
 
     [SerializeField] float breakTime = 3f;
+
+    public Slider mySlider; // インスペクターに設定する
 
 
 
@@ -76,6 +79,7 @@ public class Poi : MonoBehaviour
                 IFish fish = targetFish.GetComponent<IFish>();
                 if (fish != null)
                 {
+                     IncreaseSlider(5f); // 10だけスライダーを増やす
                     timeManager.AddTime(fish.GetTime());
                     // 時間表示テキストを生成
                     GameObject textObj = Instantiate(timeTextPrefab, worldCanvas);
@@ -124,11 +128,24 @@ public class Poi : MonoBehaviour
     {
         if (other.GetComponent<IFish>() != null)
         {
+           
             if (!fishInRange.Contains(other))
                 fishInRange.Add(other);
 
             targetFish = GetClosestFish(); // 最も近い魚を選ぶ
             isInTrigger = true;
+             
+        }
+    }
+
+    void IncreaseSlider(float amount)
+    {
+        mySlider.value += amount;
+
+        // 最大値を超えないように制限（任意）
+        if (mySlider.value > mySlider.maxValue)
+        {
+            mySlider.value = mySlider.maxValue;
         }
     }
 

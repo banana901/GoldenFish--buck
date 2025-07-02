@@ -22,7 +22,7 @@ public class RunAway : FishBase
 
 
 
-    protected override void Update()
+    public override void Update()
     {
         base.Update();
         poiPosi = GameObject.FindWithTag("Poi");

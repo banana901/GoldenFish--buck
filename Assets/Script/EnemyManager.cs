@@ -87,7 +87,7 @@ public class FishManager : MonoBehaviour
     void ReplenishmentDGoldenFish()
     {
 
-        int fishCount = currentFishList.Count(fishObj => fishObj != null && fishObj.CompareTag("Fish"));
+        int fishCount = currentFishList.Count(fishObj => fishObj != null && fishObj.CompareTag("Fish"));//ラムダ式
 
         if (fishCount < 4)
         {
