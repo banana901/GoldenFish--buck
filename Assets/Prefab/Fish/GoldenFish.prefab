@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3553391968032865800}
   - component: {fileID: 1371545460595026959}
   m_Layer: 0
-  m_Name: sakana 1_0
+  m_Name: GoldenFish
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
