@@ -45,12 +45,15 @@ public class FishManager : MonoBehaviour
         LimitDatu();
 
 
+
     }
 
     void SpawnFish()
     {
         int rnd = Random.Range(0, 100);      // 毎回独立した乱数を取る
         Vector3 pos = new Vector3(Random.Range(-15, 15), Random.Range(-15, 15), 0);
+        LimitShark();
+
 
         if (rnd < 1)                        // 1%
         {
@@ -69,6 +72,16 @@ public class FishManager : MonoBehaviour
         else if (rnd < 31)
         {
             AddFish(fishPrefabs[5], pos);
+
+        }
+        else if (rnd < 40 && isSpawnShark)
+        {
+            AddFish(fishPrefabs[6], pos);
+
+        }
+        else if (rnd < 45)
+        {
+            AddFish(fishPrefabs[7], pos);
 
         }
 
@@ -95,6 +108,22 @@ public class FishManager : MonoBehaviour
             GameObject additionFish = Instantiate(fishPrefabs[0], spawnPos, Quaternion.identity);
             currentFishList.Add(additionFish);
 
+        }
+    }
+    bool isSpawnShark = false;
+    void LimitShark()
+    {
+
+
+        int fishCount = currentFishList.Count(fishObj => fishObj != null && fishObj.CompareTag("Shark"));//ラムダ式
+
+        if (fishCount < 1)
+        {
+            isSpawnShark = true;
+        }
+        else
+        {
+            isSpawnShark = false;
         }
     }
 

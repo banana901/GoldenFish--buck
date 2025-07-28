@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.Apple.ReplayKit;
+
 
 
 public class Main : MonoBehaviour
@@ -11,6 +11,9 @@ public class Main : MonoBehaviour
     public TimeManager timeManager;
     public GameObject finishTxt;
     public GameObject poi;
+    public ScoreManager scoreManager;
+
+
 
 
 
@@ -51,7 +54,7 @@ public class Main : MonoBehaviour
     public void Title()
     {
         finishTxt.SetActive(false);
-        poi.SetActive(true);
+
         mode = Mode.Game;
 
     }
@@ -71,6 +74,8 @@ public class Main : MonoBehaviour
     {
         finishTxt.SetActive(true);
         poi.SetActive(false);
+        scoreManager.SendScoreToFirebase(); // スコア送信実行！
+
 
 
     }

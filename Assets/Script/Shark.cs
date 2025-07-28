@@ -52,10 +52,14 @@ public class Shark : FishBase
     {
         if (fishPosi != null && other.gameObject == fishPosi)
         {
-            Instantiate(biteEffect, fishPosi.transform.position, Quaternion.identity);
+            // 座標だけ保存
+            Vector3 bitePos = fishPosi.transform.position;
 
+            Instantiate(biteEffect, bitePos, Quaternion.identity);
 
+            // Fishを破壊
             Destroy(fishPosi);
+
             fishPosi = null;
         }
     }

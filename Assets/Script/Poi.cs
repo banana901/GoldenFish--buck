@@ -14,7 +14,7 @@ public class Poi : MonoBehaviour
 
     public int destoroyCount = 0;
 
-    public ScoreManager scoreManager; // ←スコアマネージャーをここに入れる
+    public ScoreManager scoreManager;
     public TimeManager timeManager;
 
     private bool isInTrigger = false;
@@ -26,12 +26,14 @@ public class Poi : MonoBehaviour
 
     [SerializeField] float breakTime = 3f;
 
-    public Slider mySlider; // インスペクターに設定する
+
+
+    public Slider mySlider;
 
 
 
-    public GameObject timeTextPrefab;     // ← Inspector でプレハブをセット
-    public Transform worldCanvas;         // ← World Space Canvas を指定
+    public GameObject timeTextPrefab;
+    public Transform worldCanvas;
 
     public List<Collider2D> fishInRange = new List<Collider2D>();
 
@@ -54,6 +56,9 @@ public class Poi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // タッチされているかチェック
+
         if (isbroken)
         {
             breakTime -= Time.deltaTime;
@@ -66,10 +71,11 @@ public class Poi : MonoBehaviour
 
 
         }
-        Move();
+        KeyMove();
+        //MouseMove();
 
 
-        if (!isbroken && Input.GetKeyDown(KeyCode.Space))
+        if (!isbroken && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
         {
 
 
@@ -79,7 +85,7 @@ public class Poi : MonoBehaviour
                 IFish fish = targetFish.GetComponent<IFish>();
                 if (fish != null)
                 {
-                     IncreaseSlider(5f); // 10だけスライダーを増やす
+                    IncreaseSlider(5f); // 10だけスライダーを増やす
                     timeManager.AddTime(fish.GetTime());
                     // 時間表示テキストを生成
                     GameObject textObj = Instantiate(timeTextPrefab, worldCanvas);
@@ -111,7 +117,7 @@ public class Poi : MonoBehaviour
 
     }
 
-    void Move()
+    void KeyMove()
     {
         // 矢印キー入力
         float MoveX = Input.GetAxisRaw("Horizontal");
@@ -120,7 +126,15 @@ public class Poi : MonoBehaviour
         Vector2 inputDirection = new Vector2(MoveX, MoveY).normalized;
         //　移動
         rb.velocity = new Vector2(inputDirection.x * poiSpeed, inputDirection.y * poiSpeed);
+    }
 
+    void MouseMove()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = 10;
+        Vector3 target = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 target2D = new Vector2(target.x, target.y);
+        rb.MovePosition(target2D); // Rigidbodyの方法で移動
 
     }
 
@@ -128,13 +142,13 @@ public class Poi : MonoBehaviour
     {
         if (other.GetComponent<IFish>() != null)
         {
-           
+
             if (!fishInRange.Contains(other))
                 fishInRange.Add(other);
 
             targetFish = GetClosestFish(); // 最も近い魚を選ぶ
             isInTrigger = true;
-             
+
         }
     }
 

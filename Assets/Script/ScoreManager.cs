@@ -10,6 +10,8 @@ public class ScoreManager : MonoBehaviour
     public GameObject scoreMax_object; // Textオブジェクト
     public int score_num = 0; // スコア変数
     public int scoreMax_num = 0; // スコア変数
+    public FirebaseSender firebaseSender; // ← FirebaseSender参照用
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,5 +49,11 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int amount)
     {
         score_num += amount;
+    }
+
+    public void SendScoreToFirebase()
+    {
+        string playerName = "Guest"; // 仮のプレイヤー名（InputFieldがあればここで取得）
+        firebaseSender.UploadScore(playerName, score_num); // ←こっちに直す
     }
 }

@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScale: {x: 10, y: 10, z: 10}
   duration: 1
+  deleteTime: 0.5
 --- !u!61 &6089732114707384631
 BoxCollider2D:
   m_ObjectHideFlags: 0

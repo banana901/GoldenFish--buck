@@ -6,6 +6,11 @@ public class ScaleEffect : MonoBehaviour
 {
     public Vector3 targetScale = new Vector3(10f, 10f, 10f); // 目指す大きさ
     public float duration = 1f; // 拡大にかける時間（秒）
+
+    public float deleteTime;
+
+    private Vector3 initialScale;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +27,7 @@ public class ScaleEffect : MonoBehaviour
     IEnumerator ScaleUpCoroutine()
     {
         gameObject.layer = LayerMask.NameToLayer("Escape");
-        Vector3 initialScale = Vector3.zero;
+        initialScale = transform.localScale;
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -39,6 +44,7 @@ public class ScaleEffect : MonoBehaviour
 
         // 最終スケールをぴったり設定（誤差防止）
         transform.localScale = targetScale;
+        yield return new WaitForSeconds(deleteTime);
         Destroy(gameObject);
     }
 }
