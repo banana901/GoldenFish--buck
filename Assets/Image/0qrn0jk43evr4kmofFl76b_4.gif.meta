@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1710358309222df43a158e0827538e5a
+guid: f7a4c3154fb700742b1f5fbaa5849dfb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,64 +97,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hand_0
+      name: 0qrn0jk43evr4kmofFl76b_4_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 63
-        height: 64
+        y: 3
+        width: 284
+        height: 287
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05eb3c05945003d4f817cd1b7b6827bf
-      internalID: -736805707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand_1
-      rect:
-        serializedVersion: 2
-        x: 163
-        y: 0
-        width: 192
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 285d6c9bdeb2d624b822c7ca073761f4
-      internalID: 235952240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hand_2
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 76
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90b256676e25c6046b3c4ff3ff08b160
-      internalID: -1490101326
+      spriteID: 0df3e5e535a18a64290cbcd122ebdca8
+      internalID: -331454765
       vertices: []
       indices: 
       edges: []
@@ -170,9 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hand_0: -736805707
-      hand_1: 235952240
-      hand_2: -1490101326
+      0qrn0jk43evr4kmofFl76b_4_0: -331454765
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,13 +7,13 @@ public class StartTime : MonoBehaviour
 {
     [SerializeField] float startCountDown = 3f;
     public GameObject time_Object; // Textオブジェクト
-    public GameObject poi;
+ 
     public GameObject EnemyManager;
     public GameObject timer;
     // Start is called before the first frame update
     void Start()
     {
-        poi.SetActive(false);
+       
         EnemyManager.SetActive(false);
         timer.SetActive(false);
 
@@ -33,7 +33,7 @@ public class StartTime : MonoBehaviour
         if (startCountDown <= 0)
         {
             timelimit_Text.text = startCountDown.ToString("START");
-            poi.SetActive(true);
+           
             EnemyManager.SetActive(true);
             timer.SetActive(true);
 

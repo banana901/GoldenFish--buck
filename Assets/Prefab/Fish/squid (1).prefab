@@ -135,7 +135,7 @@ MonoBehaviour:
   moveDuration: 0.5
   stopDuration: 1
   sumi: {fileID: 6054432663037463729, guid: 2fc8d8c26ac6e7c4596ecb3d5a7e9d15, type: 3}
-  sumiFireTime: 5
+  sumiFireTime: 7
 --- !u!61 &5089294353836706527
 BoxCollider2D:
   m_ObjectHideFlags: 0

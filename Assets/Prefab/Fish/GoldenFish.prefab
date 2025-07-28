@@ -178,6 +178,8 @@ MonoBehaviour:
   MoveAniTime: 0.1
   MoveAniTimer: 0
   spriteRenderer: {fileID: 4543628081150870173}
+  fish: {fileID: 4543628081150870173}
+  hueSpeed: 1
 --- !u!1001 &1940056378492653209
 PrefabInstance:
   m_ObjectHideFlags: 0

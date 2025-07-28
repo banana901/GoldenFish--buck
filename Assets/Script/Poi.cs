@@ -11,6 +11,8 @@ public class Poi : MonoBehaviour
     public GameObject defeatFish;
 
     public GameObject defeDatu;
+     public GameObject hand;
+
 
     public int destoroyCount = 0;
 
@@ -77,15 +79,18 @@ public class Poi : MonoBehaviour
 
         if (!isbroken && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
         {
-
-
-
+          
             if (isInTrigger && targetFish != null)
             {
                 IFish fish = targetFish.GetComponent<IFish>();
                 if (fish != null)
                 {
-                    IncreaseSlider(5f); // 10だけスライダーを増やす
+                    if (mySlider != null)
+                    {
+                        IncreaseSlider(5f);
+
+                    }
+
                     timeManager.AddTime(fish.GetTime());
                     // 時間表示テキストを生成
                     GameObject textObj = Instantiate(timeTextPrefab, worldCanvas);
@@ -111,11 +116,17 @@ public class Poi : MonoBehaviour
 
 
         }
+       
+      
+
+       
 
 
 
 
     }
+
+    
 
     void KeyMove()
     {
